@@ -1,4 +1,7 @@
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class StudentTest {
@@ -22,7 +25,21 @@ public class StudentTest {
 
     @Test
     public void testAddGrade() {
+        ArrayList<Integer> testGrade = new ArrayList<>();
+        testGrade.add(100);
 
+        ArrayList<Integer> didGradeAdd = student1.getGrades();
+        student1.addGrade(100);
+        assertEquals(testGrade, didGradeAdd);
+    }
+
+    @Test
+    public void testGetGradeAverage() {
+        double testAverage = 75;
+        student1.addGrade(100);
+        student1.addGrade(50);
+        double getGradeAverage = student1.getGradeAverage();
+        assertEquals(testAverage, getGradeAverage, 0);
     }
 
 

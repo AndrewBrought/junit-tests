@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Student {
@@ -35,12 +36,27 @@ public class Student {
         this.grades = grades;
     }
 
-    public static void main(String[] args) {
-
-        Student student1 = new Student(1234, "New Student");
-        System.out.println(student1.getId());
-
-
+    public void addGrade(int grade) {
+        grades.add(grade);
     }
+
+    public double getGradeAverage() {
+        int total = 0;
+        for (int grade : grades){
+            total += grade;
+        }
+        double average = (double) total / grades.size();
+        DecimalFormat decimalFormat = new DecimalFormat("0.##");
+        average = Double.parseDouble(decimalFormat.format(average));
+        return average;
+    }
+
+//    public static void main(String[] args) {
+//
+//        Student student1 = new Student(1234, "New Student");
+//        System.out.println(student1.getId());
+//
+//
+//    }
 
 }
