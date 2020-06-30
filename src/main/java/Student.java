@@ -59,4 +59,12 @@ public class Student {
 //
 //    }
 
+    public Student whosSmarter(Student possibleDummy) {
+        if(this.getGradeAverage()  > possibleDummy.getGradeAverage()){
+            return this;
+        } else {
+            return possibleDummy;
+        }
+    }
+
 }
