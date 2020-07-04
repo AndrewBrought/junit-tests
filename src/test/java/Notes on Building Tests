@@ -1,0 +1,73 @@
+// These notes are based on the student examples and tests
+* Create a test class.
+
+- The way we construct our tests can very greatly
+
+First test:
+ @Test
+public void testInitialProperties() {
+        Student testStudent = new Student(1L, "John");
+        assert(1L, student.getId());
+        assert("John", student.getName());
+        assertTrue(student.getGrades().isEmpty()); // if null, we get nullPointerException - else if just empty we pass
+}
+
+**Here we've built out the test - before we've built ANY code... Then we use the failures to guide us in building our code.  (we should run the test after every modification...this is not because we need it on obvious code building - it's to develop a healthy habit of interacting with successful test building to help develop strong code.
+
+=======   Now that those tests have all passed we can move on...
+
+* Now we'll test the addGrade()
+
+@Test
+public void testAddGrade() {
+    Student testStudent = new Student(1L, "John");
+    assertEquals(0, student.getGrades().size());
+
+    student.addGrades(100);
+    assertEquals(1, student.getGrades().size());
+    assertEquals(100, student.getGrades().get(0), 0);
+
+   //This will fail at first because we shouldn't have added an addGrade method yet
+   //We should set up the method but not build it to return anything yet, just instantiate it
+   //We should fail again
+   //NOW we should build out the proper return for the method
+   //Now we should Pass all tests
+}
+
+* We test getGradeAverage()
+
+@Test
+public void testGetGradeAverage() {
+        Student. testStudent = new Student(1L, "John");
+        student.addGrade(0);
+        assertEquals(0, student.getGradeAverage(), 0); //expect 0
+
+        student.addGrade(100);
+        assertEquals(50, student.getGradeAverage(), 0);
+
+        //First we instantiate the method and just set return to 0
+        //The first will pass...but isn't very helpful, we obviously fail the second test
+        //NOW we build out the method functionality
+        //Both test should pass now
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

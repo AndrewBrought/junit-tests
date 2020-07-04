@@ -14,7 +14,9 @@ public class StudentTest {
         public void setUp(){
             student1.addGrade(80);
             student1.addGrade(70);
+            student1.addGrade(85);
             student2.addGrade(90);
+            student2.addGrade(95);
             student2.addGrade(80);
         }
 

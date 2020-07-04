@@ -2,9 +2,9 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Student {
-    public long id;
-    public String name;
-    public ArrayList<Integer> grades;
+    private long id;
+    private String name;
+    private ArrayList<Integer> grades;
 
     public Student(long id, String name) {
         this.id = id;
